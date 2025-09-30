@@ -79,6 +79,7 @@ button:hover {
 
 #withdraw-btn,
 #confirm-withdraw-btn {
+  margin-top: 10px;
   background-color: #ff3b3b; /* Bright red for withdraw */
   color: #fff;
 }
@@ -286,3 +287,4 @@ button:hover {
     max-height: 150px;
   }
 }
+
