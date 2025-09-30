@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="header-bar" style="display: none;">
+    <span id="logged-user"></span>
+  </header>
+
+  <div id="menu-toggle" style="display: none;">&#9776;</div>
+  <nav id="side-menu"><br><br>
+    <ul>
+      <li id="menu-records" class="active">Record History</li>
+      <li id="menu-add">Add Entry</li>
+      <li id="menu-withdraw">Withdraw</li>
+      <li id="menu-missed">Missed Date Entry Add</li>
+    </ul>
+    <div id="menu-footer">
+      <button id="menu-logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div id="user-ui">
+    <h2>Enter User Name</h2>
+    <div class="user-input-group">
+      <input type="text" id="username-input" placeholder="Your name" />
+      <button id="add-user-btn">Add User</button>
+    </div>
+    <div id="existing-users"></div>
+  </div>
+
+  <div id="dashboard-ui" style="display: none;">
+    <h2>Welcome, To your savings tracker</h2>
+    <div id="record-list" class="scrollable"></div>
+    <button id="fetch-record-btn">Fetch Savings Record</button>
+  </div>
+
+  <div id="entry-ui" style="display: none;">
+    <h2>Entry for Today (<span id="today-date"></span>)</h2>
+    <input type="number" id="entry-input" placeholder="Enter amount" />
+    <div id="entry-buttons">
+      <button id="add-entry-btn">Add Entry</button>
+      <button id="overwrite-entry-btn">Overwrite</button>
+    </div>
+  </div>
+
+  <div id="withdraw-ui" style="display: none;">
+    <h2>Withdraw Amount</h2>
+    <input type="number" id="withdraw-input" placeholder="Enter amount to withdraw" />
+    <button id="confirm-withdraw-btn">Confirm Withdrawal</button>
+    <button id="cancel-withdraw-btn">Cancel</button>
+  </div>
+
+  <div id="missed-ui" style="display: none;">
+    <h2>Add Missed Entry</h2>
+    <input type="date" id="missed-date-input" />
+    <input type="number" id="missed-amount-input" placeholder="Enter amount" />
+    <button id="missed-add-btn">Add to Selected Date</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

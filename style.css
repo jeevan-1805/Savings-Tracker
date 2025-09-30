@@ -1,0 +1,288 @@
+/* === Base Layout === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #16161d; /* Eigengrau */
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Header Bar === */
+header#header-bar {
+  width: 100%;
+  background-color: #222;
+  color: #f0f0f0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* === Container Sections === */
+#user-ui,
+#entry-ui,
+#withdraw-ui,
+#missed-ui,
+#dashboard-ui {
+  width: 90%;
+  max-width: 500px;
+  margin-top: 20px;
+  background-color: #1e1e26;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* === Form Elements === */
+input {
+  background-color: #2a2a33;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* === Special Buttons === */
+#add-entry-btn,
+#overwrite-entry-btn {
+  margin-top: 10px;
+  background-color: #f0c000; /* Yellow for deposit */
+  color: #000;
+}
+
+#withdraw-btn,
+#confirm-withdraw-btn {
+  background-color: #ff3b3b; /* Bright red for withdraw */
+  color: #fff;
+}
+
+/* === Grouped Layouts === */
+.user-input-group,
+#entry-buttons,
+.record-actions,
+.total-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.user-input-group input {
+  flex: 1;
+}
+
+/* === Existing Users List === */
+#existing-users {
+  margin-top: 10px;
+}
+
+.user-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.user-option strong {
+  flex: 1;
+}
+
+.user-option button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* === Record Display === */
+.scrollable {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #2a2a33;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  margin-bottom: 10px;
+}
+
+.record-item {
+  margin-bottom: 5px;
+}
+
+.deposit {
+  color: #f0c000;
+}
+
+.withdrawal {
+  color: #ff3b3b;
+}
+
+.total {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.totalbtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.total-value {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* === Sidebar Menu === */
+#menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  background-color: #2a2a33;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background-color: #1e1e26;
+  color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+#side-menu.open {
+  left: 0;
+}
+
+#side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+#side-menu li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#side-menu li:hover {
+  background-color: #2a2a33;
+}
+
+#side-menu li.active {
+  background-color: #2a2a33;
+  font-weight: bold;
+}
+
+#menu-footer {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#user-initial {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* === Responsive Layout for Mobile === */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #user-ui,
+  #entry-ui,
+  #withdraw-ui,
+  #missed-ui,
+  #dashboard-ui {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .user-input-group,
+  #entry-buttons,
+  .record-actions,
+  .total-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #menu-toggle {
+    font-size: 20px;
+    padding: 4px 8px;
+    top: 8px;
+    left: 8px;
+  }
+
+  #side-menu {
+    width: 180px;
+    padding: 15px;
+  }
+
+  #side-menu li {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #menu-footer {
+    bottom: 40px;
+    left: 15px;
+  }
+
+  #record-list {
+    max-height: 150px;
+  }
+}
